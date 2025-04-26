@@ -1,21 +1,9 @@
-
-import { Button } from "@/components/ui/button";
-import {
-  ChevronDown,
-  Circle,
-  CircleCheckBig,
-  Facebook,
-  Globe,
-  HandshakeIcon,
-  MessageSquare,
-  Shield,
-  Star,
-} from "lucide-react";
-import { useState } from "react";
+import { Facebook, MessageSquare } from "lucide-react";
+import ServiceCategories from "@/components/ServiceCategories";
+import SearchSection from "@/components/SearchSection";
+import AssemblyServices from "@/components/AssemblyServices";
 
 const Index = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -80,201 +68,40 @@ const Index = () => {
       </header>
 
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-primary/10 to-secondary/10 py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <div className="space-y-2">
-                <h1 className="text-3xl md:text-4xl font-bold arabic">
-                  مع L'Maalem، المهام بسيطة
-                </h1>
-                <h2 className="text-2xl md:text-3xl font-bold">
-                  With L'Maalem, tasks are simple.
-                </h2>
-              </div>
-              <div className="space-y-2">
-                <p className="text-lg text-gray-600 arabic">
-                  ابحث عن حرفي موثوق في دقائق—تنظيف، تجميع أثاث، إصلاحات والمزيد
-                </p>
-                <p className="text-lg text-gray-600">
-                  Find a trusted craftsman in minutes—cleaning, assembly, repairs & more.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="text-lg">
-                  <span className="arabic">أنشئ مهمتك</span>
-                  <span className="mx-2">/</span>
-                  Post a Task
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-lg border-secondary text-secondary hover:bg-secondary/10"
-                >
-                  <span className="arabic">كن المعلم</span>
-                  <span className="mx-2">/</span>
-                  Become a Master
-                </Button>
-              </div>
-            </div>
-          </div>
+        {/* Hero Section with Search */}
+        <section className="py-16">
+          <SearchSection />
         </section>
 
-        {/* How It Works */}
-        <section id="how-it-works" className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Circle,
-                  titleAr: "أنشئ مهمتك",
-                  titleEn: "Post a Task",
-                  description: "Describe what you need done",
-                },
-                {
-                  icon: HandshakeIcon,
-                  titleAr: "احصل على المعلم",
-                  titleEn: "Get Matched",
-                  description: "Review offers from trusted masters",
-                },
-                {
-                  icon: CircleCheckBig,
-                  titleAr: "أنجز المهمة",
-                  titleEn: "Get It Done",
-                  description: "Schedule & complete your task",
-                },
-              ].map((step, index) => (
-                <div
-                  key={index}
-                  className="text-center p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="inline-block p-3 bg-primary/10 rounded-full mb-4">
-                    <step.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    <span className="arabic block">{step.titleAr}</span>
-                    <span className="block">{step.titleEn}</span>
-                  </h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Service Categories */}
+        <section className="border-t border-b">
+          <ServiceCategories />
         </section>
 
-        {/* Features / Benefits */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Shield,
-                  titleAr: "معلمون موثوقون ومدققون",
-                  titleEn: "Verified Masters",
-                  description: "All masters are vetted and background-checked",
-                },
-                {
-                  icon: Circle,
-                  titleAr: "دفع آمن",
-                  titleEn: "Secure Payments",
-                  description: "Cash-on-delivery or mobile wallet options",
-                },
-                {
-                  icon: Globe,
-                  titleAr: "دعم متعدد اللغات",
-                  titleEn: "Multilingual Support",
-                  description: "Available in Arabic, French, and English",
-                },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-center space-x-4 mb-4">
-                    <feature.icon className="h-6 w-6 text-primary" />
-                    <h3 className="text-xl font-semibold">
-                      <span className="arabic block">{feature.titleAr}</span>
-                      <span>{feature.titleEn}</span>
-                    </h3>
-                  </div>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Assembly Services Section */}
+        <section className="py-8 md:py-12 max-w-7xl mx-auto">
+          <AssemblyServices />
         </section>
 
-        {/* Testimonials */}
-        <section className="py-16 bg-white">
+        {/* Trust Metrics */}
+        <section className="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              <span className="arabic block">ماذا يقول عملاؤنا</span>
-              What Our Users Say
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {[
-                {
-                  quoteAr: "L'Maalem جعل العثور على حرفي موثوق به سهلاً جداً. الخدمة كانت ممتازة!",
-                  quoteEn: "L'Maalem made finding a reliable craftsman so easy. The service was excellent!",
-                  nameAr: "سارة",
-                  nameEn: "Sarah",
-                  cityAr: "الدار البيضاء",
-                  cityEn: "Casablanca",
-                },
-                {
-                  quoteAr: "كمعلم، أحب مدى سهولة العثور على عملاء جدد وتنمية أعمالي",
-                  quoteEn: "As a master, I love how simple it is to find new clients and grow my business.",
-                  nameAr: "أحمد",
-                  nameEn: "Ahmed",
-                  cityAr: "القاهرة",
-                  cityEn: "Cairo",
-                },
-              ].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-gray-50 rounded-xl shadow-sm"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-primary font-semibold">
-                        {testimonial.nameEn[0]}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="text-gray-600 mb-4 arabic">
-                        "{testimonial.quoteAr}"
-                      </p>
-                      <p className="text-gray-600 mb-4">
-                        "{testimonial.quoteEn}"
-                      </p>
-                      <p className="font-semibold">
-                        <span className="arabic">{testimonial.nameAr}، </span>
-                        <span className="text-gray-500 arabic">{testimonial.cityAr}</span>
-                        <br />
-                        {testimonial.nameEn},{" "}
-                        <span className="text-gray-500">{testimonial.cityEn}</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Section */}
-        <section className="py-16 bg-primary/10">
-          <div className="container mx-auto px-4 text-center">
-            <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-              <div className="flex items-center space-x-2">
-                <Star className="h-8 w-8 text-primary" />
-                <span className="text-2xl font-bold">4.8★ average rating</span>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-2xl font-bold text-primary">3.4 million+</div>
+                <div className="text-sm text-muted-foreground">Furniture Assemblies</div>
               </div>
-              <div className="h-8 w-px bg-gray-300 hidden md:block" />
-              <div className="text-2xl font-bold">
-                <span className="arabic block">+100 مهمة مكتملة في النسخة التجريبية</span>
-                100+ tasks completed in beta
+              <div>
+                <div className="text-2xl font-bold text-primary">1.5 million+</div>
+                <div className="text-sm text-muted-foreground">Moving tasks</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">1 million+</div>
+                <div className="text-sm text-muted-foreground">Items mounted</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">700,000+</div>
+                <div className="text-sm text-muted-foreground">Home Repairs</div>
               </div>
             </div>
           </div>
