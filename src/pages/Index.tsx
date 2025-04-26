@@ -1,9 +1,13 @@
-import { Facebook, MessageSquare } from "lucide-react";
+
+import React, { useState } from 'react';
+import { ChevronDown, Facebook, MessageSquare } from "lucide-react";
 import ServiceCategories from "@/components/ServiceCategories";
 import SearchSection from "@/components/SearchSection";
 import AssemblyServices from "@/components/AssemblyServices";
 
 const Index = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}

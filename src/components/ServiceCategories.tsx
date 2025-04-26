@@ -1,9 +1,9 @@
 
-import { Wrench, Hammer, Move, Brush, Sprout, Home, Tool, TrendingUp } from 'lucide-react';
+import { Wrench, Hammer, Move, Brush, Sprout, Home, Tools, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const categories = [
-  { icon: Tool, label: { en: 'Assembly', ar: 'تجميع' }, href: '#assembly', active: true },
+  { icon: Tools, label: { en: 'Assembly', ar: 'تجميع' }, href: '#assembly', active: true },
   { icon: Home, label: { en: 'Mounting', ar: 'تثبيت' }, href: '#mounting' },
   { icon: Move, label: { en: 'Moving', ar: 'نقل' }, href: '#moving' },
   { icon: Brush, label: { en: 'Cleaning', ar: 'تنظيف' }, href: '#cleaning' },
