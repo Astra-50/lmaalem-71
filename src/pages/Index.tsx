@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   ChevronDown,
@@ -23,7 +24,7 @@ const Index = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <a href="#" className="text-2xl font-bold text-primary">
-                HelpHub
+                L'Maalem
               </a>
             </div>
 
@@ -44,8 +45,8 @@ const Index = () => {
               <a href="#how-it-works" className="text-gray-600 hover:text-primary">
                 How It Works
               </a>
-              <a href="#become-tasker" className="text-gray-600 hover:text-primary">
-                Become a Tasker
+              <a href="#become-master" className="text-gray-600 hover:text-primary">
+                Become a Master
               </a>
               <a href="#contact" className="text-gray-600 hover:text-primary">
                 Contact
@@ -64,10 +65,10 @@ const Index = () => {
                   How It Works
                 </a>
                 <a
-                  href="#become-tasker"
+                  href="#become-master"
                   className="text-gray-600 hover:text-primary"
                 >
-                  Become a Tasker
+                  Become a Master
                 </a>
                 <a href="#contact" className="text-gray-600 hover:text-primary">
                   Contact
@@ -82,20 +83,37 @@ const Index = () => {
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-primary/10 to-secondary/10 py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Need a Helping Hand? Find Trusted Taskers in Minutes.
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Cleaning, repairs, furniture assembly & more—fast, reliable, and
-                local.
-              </p>
+            <div className="max-w-3xl mx-auto text-center space-y-6">
+              <div className="space-y-2">
+                <h1 className="text-3xl md:text-4xl font-bold arabic">
+                  مع L'Maalem، المهام بسيطة
+                </h1>
+                <h2 className="text-2xl md:text-3xl font-bold">
+                  With L'Maalem, tasks are simple.
+                </h2>
+              </div>
+              <div className="space-y-2">
+                <p className="text-lg text-gray-600 arabic">
+                  ابحث عن حرفي موثوق في دقائق—تنظيف، تجميع أثاث، إصلاحات والمزيد
+                </p>
+                <p className="text-lg text-gray-600">
+                  Find a trusted craftsman in minutes—cleaning, assembly, repairs & more.
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="text-lg">
+                  <span className="arabic">أنشئ مهمتك</span>
+                  <span className="mx-2">/</span>
                   Post a Task
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg">
-                  Become a Tasker
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg border-secondary text-secondary hover:bg-secondary/10"
+                >
+                  <span className="arabic">كن المعلم</span>
+                  <span className="mx-2">/</span>
+                  Become a Master
                 </Button>
               </div>
             </div>
@@ -110,17 +128,20 @@ const Index = () => {
               {[
                 {
                   icon: Circle,
-                  title: "Post a Task",
+                  titleAr: "أنشئ مهمتك",
+                  titleEn: "Post a Task",
                   description: "Describe what you need done",
                 },
                 {
                   icon: HandshakeIcon,
-                  title: "Get Matched",
-                  description: "Review offers from trusted taskers",
+                  titleAr: "احصل على المعلم",
+                  titleEn: "Get Matched",
+                  description: "Review offers from trusted masters",
                 },
                 {
                   icon: CircleCheckBig,
-                  title: "Get It Done",
+                  titleAr: "أنجز المهمة",
+                  titleEn: "Get It Done",
                   description: "Schedule & complete your task",
                 },
               ].map((step, index) => (
@@ -131,7 +152,10 @@ const Index = () => {
                   <div className="inline-block p-3 bg-primary/10 rounded-full mb-4">
                     <step.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">
+                    <span className="arabic block">{step.titleAr}</span>
+                    <span className="block">{step.titleEn}</span>
+                  </h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               ))}
@@ -146,17 +170,20 @@ const Index = () => {
               {[
                 {
                   icon: Shield,
-                  title: "Verified Taskers",
-                  description: "All taskers are vetted and background-checked",
+                  titleAr: "معلمون موثوقون ومدققون",
+                  titleEn: "Verified Masters",
+                  description: "All masters are vetted and background-checked",
                 },
                 {
                   icon: Circle,
-                  title: "Secure Payments",
+                  titleAr: "دفع آمن",
+                  titleEn: "Secure Payments",
                   description: "Cash-on-delivery or mobile wallet options",
                 },
                 {
                   icon: Globe,
-                  title: "Multilingual Support",
+                  titleAr: "دعم متعدد اللغات",
+                  titleEn: "Multilingual Support",
                   description: "Available in Arabic, French, and English",
                 },
               ].map((feature, index) => (
@@ -166,7 +193,10 @@ const Index = () => {
                 >
                   <div className="flex items-center space-x-4 mb-4">
                     <feature.icon className="h-6 w-6 text-primary" />
-                    <h3 className="text-xl font-semibold">{feature.title}</h3>
+                    <h3 className="text-xl font-semibold">
+                      <span className="arabic block">{feature.titleAr}</span>
+                      <span>{feature.titleEn}</span>
+                    </h3>
                   </div>
                   <p className="text-gray-600">{feature.description}</p>
                 </div>
@@ -179,21 +209,26 @@ const Index = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">
+              <span className="arabic block">ماذا يقول عملاؤنا</span>
               What Our Users Say
             </h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {[
                 {
-                  quote:
-                    "HelpHub made finding a reliable handyman so easy. The service was excellent!",
-                  name: "Sarah",
-                  city: "Casablanca",
+                  quoteAr: "L'Maalem جعل العثور على حرفي موثوق به سهلاً جداً. الخدمة كانت ممتازة!",
+                  quoteEn: "L'Maalem made finding a reliable craftsman so easy. The service was excellent!",
+                  nameAr: "سارة",
+                  nameEn: "Sarah",
+                  cityAr: "الدار البيضاء",
+                  cityEn: "Casablanca",
                 },
                 {
-                  quote:
-                    "As a tasker, I love how simple it is to find new clients and grow my business.",
-                  name: "Ahmed",
-                  city: "Cairo",
+                  quoteAr: "كمعلم، أحب مدى سهولة العثور على عملاء جدد وتنمية أعمالي",
+                  quoteEn: "As a master, I love how simple it is to find new clients and grow my business.",
+                  nameAr: "أحمد",
+                  nameEn: "Ahmed",
+                  cityAr: "القاهرة",
+                  cityEn: "Cairo",
                 },
               ].map((testimonial, index) => (
                 <div
@@ -203,16 +238,22 @@ const Index = () => {
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <span className="text-primary font-semibold">
-                        {testimonial.name[0]}
+                        {testimonial.nameEn[0]}
                       </span>
                     </div>
                     <div>
+                      <p className="text-gray-600 mb-4 arabic">
+                        "{testimonial.quoteAr}"
+                      </p>
                       <p className="text-gray-600 mb-4">
-                        "{testimonial.quote}"
+                        "{testimonial.quoteEn}"
                       </p>
                       <p className="font-semibold">
-                        {testimonial.name},{" "}
-                        <span className="text-gray-500">{testimonial.city}</span>
+                        <span className="arabic">{testimonial.nameAr}، </span>
+                        <span className="text-gray-500 arabic">{testimonial.cityAr}</span>
+                        <br />
+                        {testimonial.nameEn},{" "}
+                        <span className="text-gray-500">{testimonial.cityEn}</span>
                       </p>
                     </div>
                   </div>
@@ -231,7 +272,10 @@ const Index = () => {
                 <span className="text-2xl font-bold">4.8★ average rating</span>
               </div>
               <div className="h-8 w-px bg-gray-300 hidden md:block" />
-              <div className="text-2xl font-bold">100+ tasks completed in beta</div>
+              <div className="text-2xl font-bold">
+                <span className="arabic block">+100 مهمة مكتملة في النسخة التجريبية</span>
+                100+ tasks completed in beta
+              </div>
             </div>
           </div>
         </section>
@@ -243,7 +287,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-              <p className="text-gray-400">hello@helphub.com</p>
+              <p className="text-gray-400">hello@lmaalem.com</p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
@@ -268,7 +312,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 HelpHub. All rights reserved.</p>
+            <p>© 2024 L'Maalem. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -21,6 +21,7 @@ export default {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        arabic: ["Noto Naskh Arabic", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
