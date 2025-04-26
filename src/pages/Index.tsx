@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import {
   ChevronDown,
@@ -7,9 +6,9 @@ import {
   Facebook,
   Globe,
   HandshakeIcon,
+  MessageSquare,
   Shield,
   Star,
-  WhatsApp,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -250,7 +249,7 @@ const Index = () => {
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white">
-                  <WhatsApp className="h-6 w-6" />
+                  <MessageSquare className="h-6 w-6" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white">
                   <Facebook className="h-6 w-6" />
