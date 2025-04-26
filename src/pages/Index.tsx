@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, Facebook, MessageSquare } from "lucide-react";
 import ServiceCategories from "@/components/ServiceCategories";
 import SearchSection from "@/components/SearchSection";
 import AssemblyServices from "@/components/AssemblyServices";
+import HowItWorks from "@/components/HowItWorks";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,6 +81,11 @@ const Index = () => {
         {/* Hero Section with Search */}
         <section className="py-16">
           <SearchSection />
+        </section>
+
+        {/* How it works */}
+        <section className="border-t">
+          <HowItWorks />
         </section>
 
         {/* Service Categories */}
