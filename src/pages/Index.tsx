@@ -1,10 +1,18 @@
 
 import React, { useState } from 'react';
-import { ChevronDown, Facebook, MessageSquare } from "lucide-react";
+import { 
+  ChevronDown, 
+  Facebook, 
+  Instagram, 
+  MessageSquare, 
+  WhatsApp 
+} from "lucide-react";
 import ServiceCategories from "@/components/ServiceCategories";
-import SearchSection from "@/components/SearchSection";
-import AssemblyServices from "@/components/AssemblyServices";
 import HowItWorks from "@/components/HowItWorks";
+import Hero from "@/components/Hero";
+import Testimonials from "@/components/Testimonials";
+import FeaturedTaskers from "@/components/FeaturedTaskers";
+import FAQ from "@/components/FAQ";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +30,7 @@ const Index = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <a href="#" className="text-2xl font-bold text-primary">
-                L'Maalem
+                <span className="font-arabic">L'Maalem</span>
               </a>
             </div>
 
@@ -43,8 +51,14 @@ const Index = () => {
               <a href="#how-it-works" className="text-gray-600 hover:text-primary">
                 How It Works
               </a>
-              <a href="#become-master" className="text-gray-600 hover:text-primary">
+              <a href="#services" className="text-gray-600 hover:text-primary">
+                Services
+              </a>
+              <a href="#featured-taskers" className="text-gray-600 hover:text-primary">
                 Become a Master
+              </a>
+              <a href="#testimonials" className="text-gray-600 hover:text-primary">
+                Testimonials
               </a>
               <a href="#contact" className="text-gray-600 hover:text-primary">
                 Contact
@@ -59,16 +73,36 @@ const Index = () => {
                 <a
                   href="#how-it-works"
                   className="text-gray-600 hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   How It Works
                 </a>
                 <a
-                  href="#become-master"
+                  href="#services"
                   className="text-gray-600 hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </a>
+                <a
+                  href="#featured-taskers"
+                  className="text-gray-600 hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Become a Master
                 </a>
-                <a href="#contact" className="text-gray-600 hover:text-primary">
+                <a
+                  href="#testimonials"
+                  className="text-gray-600 hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonials
+                </a>
+                <a 
+                  href="#contact" 
+                  className="text-gray-600 hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Contact
                 </a>
               </div>
@@ -78,24 +112,34 @@ const Index = () => {
       </header>
 
       <main className="flex-grow">
-        {/* Hero Section with Search */}
-        <section className="py-16">
-          <SearchSection />
+        {/* Hero Section */}
+        <section>
+          <Hero />
         </section>
 
         {/* How it works */}
-        <section className="border-t">
+        <section className="border-t" id="how-it-works">
           <HowItWorks />
         </section>
 
         {/* Service Categories */}
-        <section className="border-t border-b">
+        <section className="border-t border-b" id="services">
           <ServiceCategories />
         </section>
 
-        {/* Assembly Services Section */}
-        <section className="py-8 md:py-12 max-w-7xl mx-auto">
-          <AssemblyServices />
+        {/* Featured Taskers */}
+        <section className="py-16 bg-gray-50">
+          <FeaturedTaskers />
+        </section>
+
+        {/* Testimonials */}
+        <section>
+          <Testimonials />
+        </section>
+
+        {/* FAQ Section */}
+        <section className="bg-gray-50">
+          <FAQ />
         </section>
 
         {/* Trust Metrics */}
@@ -124,7 +168,7 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12" id="contact">
         <div className="container mx-auto px-4">
           {/* Popular Cities */}
           <div className="mb-8">
@@ -179,20 +223,44 @@ const Index = () => {
             </div>
           </div>
 
+          {/* App Download CTA */}
+          <div className="mb-8 p-6 bg-gray-800 rounded-xl">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-xl font-bold">Get the L'Maalem App</h3>
+                <p className="text-gray-400 mt-2">Coming Soon to iOS and Android</p>
+              </div>
+              <div className="flex gap-4">
+                <button className="bg-black px-4 py-2 rounded-lg flex items-center opacity-50 cursor-not-allowed">
+                  <span className="ml-2">App Store</span>
+                </button>
+                <button className="bg-black px-4 py-2 rounded-lg flex items-center opacity-50 cursor-not-allowed">
+                  <span className="ml-2">Google Play</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
           {/* Contact and Social Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Contact Us</h3>
               <p className="text-gray-400">hello@lmaalem.com</p>
+              <a href="#whatsapp" className="flex items-center text-gray-400 hover:text-white mt-2">
+                <WhatsApp className="h-5 w-5 mr-2" /> +212 555-123456
+              </a>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white">
-                  <MessageSquare className="h-6 w-6" />
+                  <WhatsApp className="h-6 w-6" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white">
                   <Facebook className="h-6 w-6" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Instagram className="h-6 w-6" />
                 </a>
               </div>
             </div>

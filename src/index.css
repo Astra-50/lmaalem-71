@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 180 70% 35%;
+    --primary: 180 100% 30%; /* Deep teal */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 45 93% 47%;
+    --secondary: 45 100% 50%; /* Warm gold */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -53,3 +53,12 @@
   }
 }
 
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-600 transition-colors shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-secondary border-2 border-secondary px-6 py-2 rounded-full hover:bg-secondary/10 transition-colors shadow-md;
+  }
+}
