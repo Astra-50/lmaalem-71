@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import { 
   ChevronDown, 
   Facebook, 
   Instagram, 
-  MessageSquare, 
-  WhatsApp 
+  MessageSquare 
 } from "lucide-react";
 import ServiceCategories from "@/components/ServiceCategories";
 import HowItWorks from "@/components/HowItWorks";
@@ -247,14 +245,14 @@ const Index = () => {
               <h3 className="text-xl font-bold mb-4">Contact Us</h3>
               <p className="text-gray-400">hello@lmaalem.com</p>
               <a href="#whatsapp" className="flex items-center text-gray-400 hover:text-white mt-2">
-                <WhatsApp className="h-5 w-5 mr-2" /> +212 555-123456
+                <MessageSquare className="h-5 w-5 mr-2" /> +212 555-123456
               </a>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white">
-                  <WhatsApp className="h-6 w-6" />
+                  <MessageSquare className="h-6 w-6" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white">
                   <Facebook className="h-6 w-6" />
