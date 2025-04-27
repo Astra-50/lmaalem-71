@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'EN' | 'AR' | 'FR';
@@ -17,7 +16,7 @@ const translations = {
     'services': 'Services',
     'testimonials': 'Testimonials',
     'contact': 'Contact',
-    'tasks.simple': 'With L'Maalem, tasks made simple.',
+    'tasks.simple': 'With L\'Maalem, tasks made simple.',
     'find.trusted': 'Find a trusted craftsman in minutes—cleaning, assembly, repairs & more.',
     'tasks.completed': 'Tasks Completed',
     'average.rating': 'Average Rating',
