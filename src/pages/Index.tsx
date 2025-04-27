@@ -5,6 +5,7 @@ import {
   Instagram, 
   MessageSquare 
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import ServiceCategories from "@/components/ServiceCategories";
 import HowItWorks from "@/components/HowItWorks";
 import Hero from "@/components/Hero";
@@ -14,6 +15,7 @@ import FAQ from "@/components/FAQ";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
 
   const popularCities = [
     "Casablanca", "Rabat", "Fes", "Marrakech", "Agadir", "Tangier", "Meknes", 
@@ -265,11 +267,26 @@ const Index = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">Language</h3>
               <div className="flex space-x-4 text-gray-400">
-                <button className="hover:text-white">AR</button>
+                <button 
+                  className={`hover:text-white ${language === 'AR' ? 'text-white' : ''}`}
+                  onClick={() => setLanguage('AR')}
+                >
+                  AR
+                </button>
                 <span>|</span>
-                <button className="hover:text-white">FR</button>
+                <button 
+                  className={`hover:text-white ${language === 'FR' ? 'text-white' : ''}`}
+                  onClick={() => setLanguage('FR')}
+                >
+                  FR
+                </button>
                 <span>|</span>
-                <button className="text-white">EN</button>
+                <button 
+                  className={`hover:text-white ${language === 'EN' ? 'text-white' : ''}`}
+                  onClick={() => setLanguage('EN')}
+                >
+                  EN
+                </button>
               </div>
             </div>
           </div>
