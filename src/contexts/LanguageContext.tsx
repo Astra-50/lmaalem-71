@@ -41,7 +41,7 @@ const translations = {
     'services': 'Services',
     'testimonials': 'Témoignages',
     'contact': 'Contact',
-    'tasks.simple': 'Avec L'Maalem, les tâches sont simples.',
+    'tasks.simple': 'Avec L\'Maalem, les tâches sont simples.',
     'find.trusted': 'Trouvez un artisan de confiance en quelques minutes - ménage, montage, réparations et plus.',
     'tasks.completed': 'Tâches Complétées',
     'average.rating': 'Note Moyenne',
