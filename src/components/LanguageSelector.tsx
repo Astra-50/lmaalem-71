@@ -8,22 +8,22 @@ const LanguageSelector = () => {
   return (
     <div className="flex space-x-4 text-gray-400">
       <button 
-        className={`hover:text-white ${language === 'AR' ? 'text-white' : ''}`}
-        onClick={() => setLanguage('AR')}
+        className={`hover:text-white ${language === 'ar' ? 'text-white' : ''}`}
+        onClick={() => setLanguage('ar')}
       >
         AR
       </button>
       <span>|</span>
       <button 
-        className={`hover:text-white ${language === 'FR' ? 'text-white' : ''}`}
-        onClick={() => setLanguage('FR')}
+        className={`hover:text-white ${language === 'fr' ? 'text-white' : ''}`}
+        onClick={() => setLanguage('fr')}
       >
         FR
       </button>
       <span>|</span>
       <button 
-        className={`hover:text-white ${language === 'EN' ? 'text-white' : ''}`}
-        onClick={() => setLanguage('EN')}
+        className={`hover:text-white ${language === 'en' ? 'text-white' : ''}`}
+        onClick={() => setLanguage('en')}
       >
         EN
       </button>

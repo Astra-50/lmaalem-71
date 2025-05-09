@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface LanguageContextProps {
@@ -122,7 +123,10 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   }, [language]);
 
   const t = (key: string) => {
-    return translations[language as keyof typeof translations][key] || key;
+    const currentTranslations = translations[language as keyof typeof translations];
+    if (!currentTranslations) return key;
+    
+    return currentTranslations[key as keyof typeof currentTranslations] || key;
   };
 
   return (

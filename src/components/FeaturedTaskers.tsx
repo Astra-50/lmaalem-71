@@ -15,9 +15,13 @@ const FeaturedTaskers = () => {
     .sort((a, b) => b.rating - a.rating || b.tasks_completed - a.tasks_completed)
     .slice(0, 4);
 
+  const featuredTitle = t('featured.taskers');
+  const viewAllText = t('view.all.taskers');
+  const tasksLabel = t('tasks');
+
   return (
     <div className="container mx-auto px-4 py-16" id="featured-taskers">
-      <h2 className="text-3xl font-bold mb-6">{t('featured.taskers')}</h2>
+      <h2 className="text-3xl font-bold mb-6">{featuredTitle || 'Featured Taskers'}</h2>
       
       <div className="relative overflow-x-auto pb-6">
         <div className="flex space-x-4 min-w-max">
@@ -51,7 +55,7 @@ const FeaturedTaskers = () => {
                       <div className="flex items-center mt-2">
                         <Star className="h-4 w-4 fill-secondary text-secondary mr-1" />
                         <span className="font-medium">{tasker.rating}</span>
-                        <span className="text-gray-500 ml-2">({tasker.tasks_completed} {t('tasks')})</span>
+                        <span className="text-gray-500 ml-2">({tasker.tasks_completed} {tasksLabel})</span>
                       </div>
                     </div>
                   </CardContent>
@@ -65,7 +69,7 @@ const FeaturedTaskers = () => {
       <div className="text-center mt-6">
         <Link to="/services/trending">
           <button className="px-6 py-2 border border-primary text-primary rounded-full hover:bg-primary/5 transition-colors">
-            {t('view.all.taskers')}
+            {viewAllText || 'View All Taskers'}
           </button>
         </Link>
       </div>
