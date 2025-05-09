@@ -9,7 +9,115 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      portfolio_images: {
+        Row: {
+          created_at: string
+          id: string
+          image_url: string
+          tasker_id: string
+          title: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          image_url: string
+          tasker_id: string
+          title?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          image_url?: string
+          tasker_id?: string
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "portfolio_images_tasker_id_fkey"
+            columns: ["tasker_id"]
+            isOneToOne: false
+            referencedRelation: "taskers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      tasker_specialties: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          specialty: string
+          tasker_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          specialty: string
+          tasker_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          specialty?: string
+          tasker_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tasker_specialties_tasker_id_fkey"
+            columns: ["tasker_id"]
+            isOneToOne: false
+            referencedRelation: "taskers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      taskers: {
+        Row: {
+          bio: string | null
+          city: string
+          created_at: string
+          id: string
+          image: string | null
+          languages: string[]
+          name: string
+          rating: number
+          tasks_completed: number
+          updated_at: string
+          whatsapp: string | null
+          years_experience: number
+        }
+        Insert: {
+          bio?: string | null
+          city: string
+          created_at?: string
+          id?: string
+          image?: string | null
+          languages?: string[]
+          name: string
+          rating?: number
+          tasks_completed?: number
+          updated_at?: string
+          whatsapp?: string | null
+          years_experience?: number
+        }
+        Update: {
+          bio?: string | null
+          city?: string
+          created_at?: string
+          id?: string
+          image?: string | null
+          languages?: string[]
+          name?: string
+          rating?: number
+          tasks_completed?: number
+          updated_at?: string
+          whatsapp?: string | null
+          years_experience?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

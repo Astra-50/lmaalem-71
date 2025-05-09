@@ -1,108 +1,135 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'EN' | 'AR' | 'FR';
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
+interface LanguageContextProps {
+  language: string;
   t: (key: string) => string;
+  setLanguage: (lang: string) => void;
+}
+
+const LanguageContext = createContext<LanguageContextProps>({
+  language: 'en',
+  t: (key: string) => key,
+  setLanguage: () => {},
+});
+
+interface LanguageProviderProps {
+  children: React.ReactNode;
 }
 
 const translations = {
-  EN: {
-    'post.task': 'Post a Task',
-    'become.master': 'Become a Master',
-    'how.works': 'How It Works',
-    'services': 'Services',
-    'testimonials': 'Testimonials',
-    'contact': 'Contact',
-    'tasks.simple': 'With L\'Maalem, tasks made simple.',
-    'find.trusted': 'Find a trusted craftsman in minutes—cleaning, assembly, repairs & more.',
-    'tasks.completed': 'Tasks Completed',
-    'average.rating': 'Average Rating',
-    'back.home': 'Back to Home',
-    'taskers.available': 'Taskers available',
-    'view.profile': 'View Profile',
-    'tasks': 'tasks',
-    'category.assembly': 'Assembly',
-    'category.mounting': 'Mounting',
-    'category.moving': 'Moving',
-    'category.cleaning': 'Cleaning',
-    'category.outdoor': 'Outdoor Help',
-    'category.repairs': 'Home Repairs',
-    'category.painting': 'Painting',
-    'category.trending': 'Trending',
+  en: {
+    "services": "Services",
+    "back.home": "Back to Home",
+    "category.assembly": "Assembly",
+    "category.mounting": "Mounting",
+    "category.moving": "Moving",
+    "category.cleaning": "Cleaning",
+    "category.outdoor": "Outdoor",
+    "category.repairs": "Repairs",
+    "category.painting": "Painting",
+    "category.trending": "Trending",
+    "taskers.available": "Taskers available",
+    "tasks": "tasks",
+    "view.profile": "View Profile",
+    "loading": "Loading...",
+    "tasker.notFound": "Tasker not found",
+    "back.services": "Back to Services",
+    "about": "About",
+    "specialties": "Specialties",
+    "portfolio": "Portfolio",
+    "contact.whatsapp": "Contact via WhatsApp",
+    "years.experience": "years of experience",
+    "years": "years",
+    "all.cities": "All Cities",
+    "no.taskers.found": "No taskers found matching your criteria",
+    "clear.filters": "Clear Filters",
+    "whatsapp.greeting": "Hello",
+    "whatsapp.inquiry": "I saw your profile on L'Maalem and I'm interested in your services.",
+    "featured.taskers": "Featured Taskers",
+    "view.all.taskers": "View All Taskers"
   },
-  AR: {
-    'post.task': 'أنشئ مهمتك',
-    'become.master': 'كن المعلم',
-    'how.works': 'كيف يعمل',
-    'services': 'الخدمات',
-    'testimonials': 'التوصيات',
-    'contact': 'اتصل بنا',
-    'tasks.simple': 'مع L\'Maalem، المهام بسيطة',
-    'find.trusted': 'اعثر على حرفي موثوق به في دقائق - تنظيف، تجميع، إصلاحات وأكثر',
-    'tasks.completed': 'المهام المنجزة',
-    'average.rating': 'متوسط التقييم',
-    'back.home': 'العودة للصفحة الرئيسية',
-    'taskers.available': 'مساعدون متوفرون',
-    'view.profile': 'عرض الملف الشخصي',
-    'tasks': 'مهام',
-    'category.assembly': 'تجميع',
-    'category.mounting': 'تثبيت',
-    'category.moving': 'نقل',
-    'category.cleaning': 'تنظيف',
-    'category.outdoor': 'مساعدة خارجية',
-    'category.repairs': 'إصلاحات منزلية',
-    'category.painting': 'طلاء',
-    'category.trending': 'رائج',
+  ar: {
+    "services": "الخدمات",
+    "back.home": "العودة إلى الرئيسية",
+    "category.assembly": "تركيب",
+    "category.mounting": "تثبيت",
+    "category.moving": "نقل",
+    "category.cleaning": "تنظيف",
+    "category.outdoor": "خدمات خارجية",
+    "category.repairs": "إصلاحات",
+    "category.painting": "دهان",
+    "category.trending": "الأكثر شيوعا",
+    "taskers.available": "معلمين متاحين",
+    "tasks": "مهمة",
+    "view.profile": "عرض الملف الشخصي",
+    "loading": "جاري التحميل...",
+    "tasker.notFound": "لم يتم العثور على المعلم",
+    "back.services": "العودة إلى الخدمات",
+    "about": "عن المعلم",
+    "specialties": "التخصصات",
+    "portfolio": "معرض الأعمال",
+    "contact.whatsapp": "تواصل عبر واتساب",
+    "years.experience": "سنوات الخبرة",
+    "years": "سنوات",
+    "all.cities": "كل المدن",
+    "no.taskers.found": "لم يتم العثور على معلمين مطابقين لمعاييرك",
+    "clear.filters": "مسح المرشحات",
+    "whatsapp.greeting": "مرحبا",
+    "whatsapp.inquiry": "لقد رأيت ملفك الشخصي على المعلم وأنا مهتم بخدماتك.",
+    "featured.taskers": "معلمين مميزين",
+    "view.all.taskers": "عرض جميع المعلمين"
   },
-  FR: {
-    'post.task': 'Poster une Tâche',
-    'become.master': 'Devenir un Maître',
-    'how.works': 'Comment ça Marche',
-    'services': 'Services',
-    'testimonials': 'Témoignages',
-    'contact': 'Contact',
-    'tasks.simple': 'Avec L\'Maalem, les tâches sont simples.',
-    'find.trusted': 'Trouvez un artisan de confiance en quelques minutes - ménage, montage, réparations et plus.',
-    'tasks.completed': 'Tâches Complétées',
-    'average.rating': 'Note Moyenne',
-    'back.home': 'Retour à l\'Accueil',
-    'taskers.available': 'Prestataires disponibles',
-    'view.profile': 'Voir le Profil',
-    'tasks': 'tâches',
-    'category.assembly': 'Assemblage',
-    'category.mounting': 'Montage',
-    'category.moving': 'Déménagement',
-    'category.cleaning': 'Nettoyage',
-    'category.outdoor': 'Aide extérieure',
-    'category.repairs': 'Réparations',
-    'category.painting': 'Peinture',
-    'category.trending': 'Tendance',
+  fr: {
+    "services": "Services",
+    "back.home": "Retour à l'accueil",
+    "category.assembly": "Assemblage",
+    "category.mounting": "Montage",
+    "category.moving": "Déménagement",
+    "category.cleaning": "Nettoyage",
+    "category.outdoor": "Extérieur",
+    "category.repairs": "Réparations",
+    "category.painting": "Peinture",
+    "category.trending": "Tendances",
+    "taskers.available": "Artisans disponibles",
+    "tasks": "tâches",
+    "view.profile": "Voir le profil",
+    "loading": "Chargement...",
+    "tasker.notFound": "Artisan non trouvé",
+    "back.services": "Retour aux services",
+    "about": "À propos",
+    "specialties": "Spécialités",
+    "portfolio": "Portfolio",
+    "contact.whatsapp": "Contact via WhatsApp",
+    "years.experience": "années d'expérience",
+    "years": "ans",
+    "all.cities": "Toutes les villes",
+    "no.taskers.found": "Aucun artisan trouvé correspondant à vos critères",
+    "clear.filters": "Effacer les filtres",
+    "whatsapp.greeting": "Bonjour",
+    "whatsapp.inquiry": "J'ai vu votre profil sur L'Maalem et je suis intéressé par vos services.",
+    "featured.taskers": "Artisans en Vedette",
+    "view.all.taskers": "Voir tous les artisans"
   }
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('EN');
+  useEffect(() => {
+    localStorage.setItem('language', language);
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+  }, [language]);
 
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.EN] || key;
+  const t = (key: string) => {
+    return translations[language as keyof typeof translations][key] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, t, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
-}
-
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
 };
+
+export const useLanguage = () => useContext(LanguageContext);
