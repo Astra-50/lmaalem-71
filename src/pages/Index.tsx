@@ -9,6 +9,8 @@ import Testimonials from "@/components/Testimonials";
 import FeaturedTaskers from "@/components/FeaturedTaskers";
 import FAQ from "@/components/FAQ";
 import TrustMetrics from '@/components/TrustMetrics';
+import ContactCTA from '@/components/ContactCTA';
+import AppPromotion from '@/components/AppPromotion';
 
 const Index = () => {
   return (
@@ -36,9 +38,19 @@ const Index = () => {
           <FeaturedTaskers />
         </section>
 
+        {/* Contact CTA Section */}
+        <section id="join">
+          <ContactCTA />
+        </section>
+
         {/* Testimonials */}
         <section>
           <Testimonials />
+        </section>
+
+        {/* App Promotion */}
+        <section>
+          <AppPromotion />
         </section>
 
         {/* FAQ Section */}
