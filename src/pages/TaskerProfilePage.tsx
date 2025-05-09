@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Star, WhatsApp, Clock, Check, User } from 'lucide-react';
+import { ArrowLeft, Star, MessageCircle, Clock, Check, User } from 'lucide-react';
 import { useTasker, useTaskerSpecialties, useTaskerPortfolio } from '@/hooks/use-tasker-data';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -106,7 +106,7 @@ const TaskerProfilePage = () => {
             <div>
               <a href={whatsappLink} target="_blank" rel="noreferrer">
                 <Button className="gap-2 bg-green-600 hover:bg-green-700">
-                  <WhatsApp className="h-4 w-4" />
+                  <MessageCircle className="h-4 w-4" />
                   {t('contact.whatsapp')}
                 </Button>
               </a>
