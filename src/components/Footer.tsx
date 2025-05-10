@@ -1,9 +1,13 @@
 
 import React from 'react';
-import { Facebook, Instagram, MessageSquare } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { Facebook, Instagram, MessageCircle } from "lucide-react";
 import LanguageSelector from './LanguageSelector';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   const popularCities = [
     "Casablanca", "Rabat", "Fes", "Marrakech", "Agadir", "Tangier", "Meknes", 
     "Oujda", "Kenitra", "Tetouan"
@@ -34,15 +38,15 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Homeowner Services</h3>
             <div className="space-y-2">
-              <a href="#services" className="block text-gray-400 hover:text-white">Find Local Services</a>
-              <a href="#nearby" className="block text-gray-400 hover:text-white">Services Near Me</a>
+              <Link to="/services/all" className="block text-gray-400 hover:text-white">Find Local Services</Link>
+              <Link to="/request-job" className="block text-gray-400 hover:text-white">Request a Service</Link>
               <a href="#cost" className="block text-gray-400 hover:text-white">Cost Calculator</a>
             </div>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">For Service Pros</h3>
             <div className="space-y-2">
-              <a href="#register" className="block text-gray-400 hover:text-white">Register Business</a>
+              <Link to="/craftsman-signup" className="block text-gray-400 hover:text-white">Register Business</Link>
               <a href="#center" className="block text-gray-400 hover:text-white">Business Center</a>
               <a href="#resources" className="block text-gray-400 hover:text-white">Pro Resources</a>
             </div>
@@ -58,9 +62,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">About Us</h3>
             <div className="space-y-2">
-              <a href="#about" className="block text-gray-400 hover:text-white">How it Works</a>
+              <Link to="/about" className="block text-gray-400 hover:text-white">About L'Maalem</Link>
               <a href="#careers" className="block text-gray-400 hover:text-white">Careers</a>
-              <a href="#contact" className="block text-gray-400 hover:text-white">Contact Us</a>
+              <Link to="/contact" className="block text-gray-400 hover:text-white">Contact Us</Link>
             </div>
           </div>
         </div>
@@ -69,15 +73,15 @@ const Footer = () => {
         <div className="mb-8 p-6 bg-gray-800 rounded-xl">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
-              <h3 className="text-xl font-bold">Get the L'Maalem App</h3>
-              <p className="text-gray-400 mt-2">Coming Soon to iOS and Android</p>
+              <h3 className="text-xl font-bold">{t('coming.soon')}</h3>
+              <p className="text-gray-400 mt-2">iOS and Android</p>
             </div>
             <div className="flex gap-4">
               <button className="bg-black px-4 py-2 rounded-lg flex items-center opacity-50 cursor-not-allowed">
-                <span className="ml-2">App Store</span>
+                <span className="ml-2">{t('app.store')}</span>
               </button>
               <button className="bg-black px-4 py-2 rounded-lg flex items-center opacity-50 cursor-not-allowed">
-                <span className="ml-2">Google Play</span>
+                <span className="ml-2">{t('play.store')}</span>
               </button>
             </div>
           </div>
@@ -89,14 +93,14 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <p className="text-gray-400">hello@lmaalem.com</p>
             <a href="#whatsapp" className="flex items-center text-gray-400 hover:text-white mt-2">
-              <MessageSquare className="h-5 w-5 mr-2" /> +212 555-123456
+              <MessageCircle className="h-5 w-5 mr-2" /> +212 555-123456
             </a>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
-                <MessageSquare className="h-6 w-6" />
+                <MessageCircle className="h-6 w-6" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
                 <Facebook className="h-6 w-6" />
@@ -115,9 +119,9 @@ const Footer = () => {
         {/* Legal Links */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <div className="flex flex-wrap justify-center gap-4 mb-4">
-            <a href="#terms" className="hover:text-white">Terms of Use</a>
+            <Link to="/terms" className="hover:text-white">Terms of Use</Link>
             <span>|</span>
-            <a href="#privacy" className="hover:text-white">Privacy Policy</a>
+            <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
             <span>|</span>
             <a href="#sitemap" className="hover:text-white">Sitemap</a>
             <span>|</span>

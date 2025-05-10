@@ -3,6 +3,7 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ContactCTA = () => {
   const { t } = useLanguage();
@@ -37,12 +38,12 @@ const ContactCTA = () => {
                 <span>Get connected with clients via WhatsApp</span>
               </li>
             </ul>
-            <a href={craftsmanWhatsappLink} target="_blank" rel="noreferrer">
+            <Link to="/craftsman-signup">
               <Button className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700">
                 <MessageCircle className="h-4 w-4" />
                 Join as a Craftsman
               </Button>
-            </a>
+            </Link>
           </div>
           
           {/* For Clients */}
@@ -65,11 +66,11 @@ const ContactCTA = () => {
                 <span>Contact professionals directly via WhatsApp</span>
               </li>
             </ul>
-            <a href={clientWhatsappLink} target="_blank" rel="noreferrer">
+            <Link to="/request-job">
               <Button className="w-full flex items-center justify-center gap-2">
                 Request a Service
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

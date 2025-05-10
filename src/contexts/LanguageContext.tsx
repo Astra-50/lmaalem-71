@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface LanguageContextProps {
@@ -60,7 +59,70 @@ const translations: TranslationsType = {
     'trust.metrics.happy': 'Happy Clients',
     'coming.soon': 'Mobile App Coming Soon',
     'app.store': 'App Store',
-    'play.store': 'Play Store'
+    'play.store': 'Play Store',
+    
+    // Job Request Form
+    'job.request.title': 'Request a Service',
+    'job.request.subtitle': 'Tell us what you need help with and we\'ll connect you with the right professional',
+    'job.service.label': 'Type of Service',
+    'job.service.placeholder': 'Select a service',
+    'job.city.label': 'City',
+    'job.city.placeholder': 'Select your city',
+    'job.date.label': 'Preferred Date',
+    'job.date.placeholder': 'When do you need this service?',
+    'job.description.label': 'Describe Your Project',
+    'job.description.placeholder': 'Provide details about what you need help with...',
+    'job.contact.label': 'Contact Information',
+    'job.name.label': 'Full Name',
+    'job.phone.label': 'Phone Number',
+    'job.submit': 'Submit Request',
+    'job.whatsapp.option': 'Connect me via WhatsApp',
+
+    // Craftsman Signup Form
+    'craftsman.signup.title': 'Join as a Craftsman',
+    'craftsman.signup.subtitle': 'Register your services and start getting clients through L\'Maalem',
+    'craftsman.name.label': 'Full Name',
+    'craftsman.phone.label': 'Phone Number (WhatsApp)',
+    'craftsman.city.label': 'City',
+    'craftsman.services.label': 'Services Offered',
+    'craftsman.services.placeholder': 'Select the services you provide',
+    'craftsman.experience.label': 'Years of Experience',
+    'craftsman.description.label': 'About Your Services',
+    'craftsman.description.placeholder': 'Describe your expertise, skills, and the services you offer...',
+    'craftsman.image.label': 'Profile Photo (Optional)',
+    'craftsman.image.description': 'Upload a professional photo of yourself or your work',
+    'craftsman.submit': 'Submit Application',
+    
+    // Confirmation Pages
+    'job.confirmation.title': 'Request Submitted!',
+    'job.confirmation.message': 'Thank you for your service request. We\'ll connect you with a qualified professional soon.',
+    'job.confirmation.next': 'What happens next?',
+    'job.confirmation.step1': 'Your request is being reviewed',
+    'job.confirmation.step2': 'We\'ll match you with available professionals',
+    'job.confirmation.step3': 'You\'ll be contacted via WhatsApp to finalize details',
+    
+    'craftsman.confirmation.title': 'Application Received!',
+    'craftsman.confirmation.message': 'Thank you for applying to join L\'Maalem network.',
+    'craftsman.confirmation.next': 'What happens next?',
+    'craftsman.confirmation.step1': 'We\'ll review your application',
+    'craftsman.confirmation.step2': 'Once approved, your profile will be visible to clients',
+    'craftsman.confirmation.step3': 'You\'ll start receiving job requests via WhatsApp',
+    'craftsman.confirmation.whatsapp': 'Join our WhatsApp community',
+    'craftsman.confirmation.whatsapp.description': 'Connect with other craftsmen, get tips and receive updates',
+    
+    // Social Sharing
+    'share.text': 'Share with others:',
+    'share.facebook': 'Share on Facebook',
+    'share.twitter': 'Share on Twitter',
+    'share.whatsapp': 'Share via WhatsApp',
+    
+    // Static Pages
+    'terms.title': 'Terms of Service',
+    'privacy.title': 'Privacy Policy',
+    'about.title': 'About L\'Maalem',
+    'contact.title': 'Contact Us',
+    'back.button': 'Back',
+    'submit.button': 'Submit'
   },
   fr: {
     'app.name': 'L\'Maalem',
@@ -106,7 +168,70 @@ const translations: TranslationsType = {
     'trust.metrics.happy': 'Clients satisfaits',
     'coming.soon': 'Application mobile bientôt disponible',
     'app.store': 'App Store',
-    'play.store': 'Play Store'
+    'play.store': 'Play Store',
+    
+    // Job Request Form
+    'job.request.title': 'Demander un Service',
+    'job.request.subtitle': 'Dites-nous ce dont vous avez besoin et nous vous mettrons en contact avec le bon professionnel',
+    'job.service.label': 'Type de service',
+    'job.service.placeholder': 'Sélectionnez un service',
+    'job.city.label': 'Ville',
+    'job.city.placeholder': 'Sélectionnez votre ville',
+    'job.date.label': 'Date Préférée',
+    'job.date.placeholder': 'Quand avez-vous besoin de ce service?',
+    'job.description.label': 'Décrivez Votre Projet',
+    'job.description.placeholder': 'Fournissez des détails sur ce dont vous avez besoin...',
+    'job.contact.label': 'Informations de Contact',
+    'job.name.label': 'Nom Complet',
+    'job.phone.label': 'Numéro de Téléphone',
+    'job.submit': 'Soumettre la Demande',
+    'job.whatsapp.option': 'Contactez-moi via WhatsApp',
+
+    // Craftsman Signup Form
+    'craftsman.signup.title': 'Rejoindre en tant qu\'Artisan',
+    'craftsman.signup.subtitle': 'Enregistrez vos services et commencez à obtenir des clients via L\'Maalem',
+    'craftsman.name.label': 'Nom Complet',
+    'craftsman.phone.label': 'Numéro de Téléphone (WhatsApp)',
+    'craftsman.city.label': 'Ville',
+    'craftsman.services.label': 'Services Offerts',
+    'craftsman.services.placeholder': 'Sélectionnez les services que vous fournissez',
+    'craftsman.experience.label': 'Années d\'Expérience',
+    'craftsman.description.label': 'À Propos de Vos Services',
+    'craftsman.description.placeholder': 'Décrivez votre expertise, compétences et les services que vous proposez...',
+    'craftsman.image.label': 'Photo de Profil (Facultatif)',
+    'craftsman.image.description': 'Téléchargez une photo professionnelle de vous ou de votre travail',
+    'craftsman.submit': 'Soumettre la Candidature',
+    
+    // Confirmation Pages
+    'job.confirmation.title': 'Demande Soumise!',
+    'job.confirmation.message': 'Merci pour votre demande de service. Nous vous mettrons en relation avec un professionnel qualifié bientôt.',
+    'job.confirmation.next': 'Que se passe-t-il ensuite?',
+    'job.confirmation.step1': 'Votre demande est en cours d\'examen',
+    'job.confirmation.step2': 'Nous vous mettrons en relation avec des professionnels disponibles',
+    'job.confirmation.step3': 'Vous serez contacté via WhatsApp pour finaliser les détails',
+    
+    'craftsman.confirmation.title': 'Candidature Reçue!',
+    'craftsman.confirmation.message': 'Merci d\'avoir postulé pour rejoindre le réseau L\'Maalem.',
+    'craftsman.confirmation.next': 'Que se passe-t-il ensuite?',
+    'craftsman.confirmation.step1': 'Nous examinerons votre candidature',
+    'craftsman.confirmation.step2': 'Une fois approuvé, votre profil sera visible par les clients',
+    'craftsman.confirmation.step3': 'Vous commencerez à recevoir des demandes de travail via WhatsApp',
+    'craftsman.confirmation.whatsapp': 'Rejoignez notre communauté WhatsApp',
+    'craftsman.confirmation.whatsapp.description': 'Connectez-vous avec d\'autres artisans, obtenez des conseils et recevez des mises à jour',
+    
+    // Social Sharing
+    'share.text': 'Partager avec d\'autres:',
+    'share.facebook': 'Partager sur Facebook',
+    'share.twitter': 'Partager sur Twitter',
+    'share.whatsapp': 'Partager via WhatsApp',
+    
+    // Static Pages
+    'terms.title': 'Conditions d\'Utilisation',
+    'privacy.title': 'Politique de Confidentialité',
+    'about.title': 'À Propos de L\'Maalem',
+    'contact.title': 'Contactez-Nous',
+    'back.button': 'Retour',
+    'submit.button': 'Soumettre'
   },
   ar: {
     'app.name': 'المعلم',
@@ -152,7 +277,70 @@ const translations: TranslationsType = {
     'trust.metrics.happy': 'العملاء السعداء',
     'coming.soon': 'تطبيق الجوال قريباً',
     'app.store': 'آب ستور',
-    'play.store': 'بلاي ستور'
+    'play.store': 'بلاي ستور',
+    
+    // Job Request Form
+    'job.request.title': 'طلب خدمة',
+    'job.request.subtitle': 'أخبرنا بما تحتاج إليه وسنوصلك بالمحترف المناسب',
+    'job.service.label': 'نوع الخدمة',
+    'job.service.placeholder': 'اختر خدمة',
+    'job.city.label': 'المدينة',
+    'job.city.placeholder': 'اختر مدينتك',
+    'job.date.label': 'التاريخ المفضل',
+    'job.date.placeholder': 'متى تحتاج هذه الخدمة؟',
+    'job.description.label': 'وصف مشروعك',
+    'job.description.placeholder': 'قم بتوفير تفاصيل حول ما تحتاج المساعدة به...',
+    'job.contact.label': 'معلومات الاتصال',
+    'job.name.label': 'الاسم الكامل',
+    'job.phone.label': 'رقم الهاتف',
+    'job.submit': 'إرسال الطلب',
+    'job.whatsapp.option': 'تواصل معي عبر واتساب',
+
+    // Craftsman Signup Form
+    'craftsman.signup.title': 'انضم كحرفي',
+    'craftsman.signup.subtitle': 'سجل خدماتك وابدأ في الحصول على عملاء من خلال المعلم',
+    'craftsman.name.label': 'الاسم الكامل',
+    'craftsman.phone.label': 'رقم الهاتف (واتساب)',
+    'craftsman.city.label': 'المدينة',
+    'craftsman.services.label': 'الخدمات المقدمة',
+    'craftsman.services.placeholder': 'اختر الخدمات التي تقدمها',
+    'craftsman.experience.label': 'سنوات الخبرة',
+    'craftsman.description.label': 'حول خدماتك',
+    'craftsman.description.placeholder': 'صف خبرتك ومهاراتك والخدمات التي تقدمها...',
+    'craftsman.image.label': 'صورة الملف الشخصي (اختياري)',
+    'craftsman.image.description': 'قم بتحميل صورة احترافية لنفسك أو لعملك',
+    'craftsman.submit': 'تقديم الطلب',
+    
+    // Confirmation Pages
+    'job.confirmation.title': 'تم إرسال الطلب!',
+    'job.confirmation.message': 'شكراً لطلب الخدمة. سنقوم بتوصيلك مع محترف مؤهل قريباً.',
+    'job.confirmation.next': 'ماذا يحدث بعد ذلك؟',
+    'job.confirmation.step1': 'يتم مراجعة طلبك',
+    'job.confirmation.step2': 'سنقوم بتوصيلك بالمحترفين المتاحين',
+    'job.confirmation.step3': 'سيتم الاتصال بك عبر واتساب لإنهاء التفاصيل',
+    
+    'craftsman.confirmation.title': 'تم استلام الطلب!',
+    'craftsman.confirmation.message': 'شكراً للتقديم للانضمام إلى شبكة المعلم.',
+    'craftsman.confirmation.next': 'ماذا يحدث بعد ذلك؟',
+    'craftsman.confirmation.step1': 'سنقوم بمراجعة طلبك',
+    'craftsman.confirmation.step2': 'بمجرد الموافقة، سيكون ملفك الشخصي مرئياً للعملاء',
+    'craftsman.confirmation.step3': 'ستبدأ في تلقي طلبات العمل عبر واتساب',
+    'craftsman.confirmation.whatsapp': 'انضم إلى مجتمع واتساب لدينا',
+    'craftsman.confirmation.whatsapp.description': 'تواصل مع الحرفيين الآخ��ين، واحصل على نصائح واستلم التحديثات',
+    
+    // Social Sharing
+    'share.text': 'شارك مع الآخرين:',
+    'share.facebook': 'مشاركة على فيسبوك',
+    'share.twitter': 'مشاركة على تويتر',
+    'share.whatsapp': 'مشاركة عبر واتساب',
+    
+    // Static Pages
+    'terms.title': 'شروط الخدمة',
+    'privacy.title': 'سياسة الخصوصية',
+    'about.title': 'حول المعلم',
+    'contact.title': 'اتصل بنا',
+    'back.button': 'رجوع',
+    'submit.button': 'إرسال'
   }
 };
 
