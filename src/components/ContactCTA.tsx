@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { WhatsApp } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const ContactCTA = () => {
   const { t } = useLanguage();
@@ -39,7 +39,7 @@ const ContactCTA = () => {
             </ul>
             <a href={craftsmanWhatsappLink} target="_blank" rel="noreferrer">
               <Button className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700">
-                <WhatsApp className="h-4 w-4" />
+                <MessageCircle className="h-4 w-4" />
                 Join as a Craftsman
               </Button>
             </a>
